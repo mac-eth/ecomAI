@@ -55,6 +55,7 @@ export async function Header() {
           <span className="hidden sm:block">Documentation</span>
           <span className="sm:hidden">Docs</span>
         </a>
+
         <ThemeToggle />
       </div>
     </header>
