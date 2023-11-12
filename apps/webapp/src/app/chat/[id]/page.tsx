@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { getChat } from "@/app/actions";
 import { Chat } from "@/components/chat";
+import { api } from "@/utils/api";
 
 import { auth } from "@ecomai/auth";
 
