@@ -5,6 +5,7 @@ import type { DefaultSession } from "@auth/core/types";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
 
 import { db, tableCreator } from "@ecomai/db";
 
@@ -25,10 +26,16 @@ export const {
   signOut,
 } = NextAuth({
   adapter: DrizzleAdapter(db, tableCreator),
-  providers: [GitHub],
+  providers: [
+    GitHub,
+    Google({
+      clientId: process.env.AUTH_GOOGLE_CLIENT_ID,
+      clientSecret: process.env.AUTH_GOOGLE_CLIENT_SECRET,
+    }),
+  ],
   callbacks: {
     jwt({ token, profile }) {
-      if (profile) {
+      if (profile?.id) {
         token.id = profile.id;
         token.image = profile.avatar_url || profile.picture;
       }
