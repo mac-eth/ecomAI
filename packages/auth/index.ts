@@ -42,6 +42,8 @@ export const {
       user: {
         ...session.user,
         id: user.id,
+        image: user.image,
+        name: user.name,
       },
     }),
   },

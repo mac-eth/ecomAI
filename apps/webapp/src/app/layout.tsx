@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
@@ -12,7 +13,7 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: {
     default: "EcomAI",
-    template: `%s - EcomAI Expert`,
+    template: `EcomAI - %s`,
   },
   description:
     "An AI-powered chatbot designed to assist you in your E-commerce business.",
@@ -43,10 +44,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Toaster />
-        <Providers attribute="class" defaultTheme="system" enableSystem>
+        <Providers
+          attribute="class"
+          defaultTheme="system"
+          headers={headers()}
+          enableSystem
+        >
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="bg-muted/50 flex flex-1 flex-col">{children}</main>
+            <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
           </div>
           <Analytics />
           <TailwindIndicator />

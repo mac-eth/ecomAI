@@ -8,4 +8,8 @@ export const authRouter = createTRPCRouter({
     // testing type validation of overridden next-auth Session in @ecomai/auth package
     return "you can see this secret message!";
   }),
+
+  getuser: protectedProcedure.query(({ ctx }) => {
+    return ctx.session.user;
+  }),
 });
