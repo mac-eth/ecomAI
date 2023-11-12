@@ -1,7 +1,6 @@
+import { appRouter, createTRPCContext } from "@ecomai/api";
+import { auth } from "@ecomai/auth";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-
-import { appRouter, createTRPCContext } from "@acme/api";
-import { auth } from "@acme/auth";
 
 export const runtime = "edge";
 
