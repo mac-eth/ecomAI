@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* @see https://github.com/nextauthjs/next-auth/pull/8932 */
 
-import Discord from "@auth/core/providers/discord";
 import type { DefaultSession } from "@auth/core/types";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { db, tableCreator } from "@ecomai/db";
 import NextAuth from "next-auth";
+import GitHub from "next-auth/providers/github";
+
+import { db, tableCreator } from "@ecomai/db";
 
 export type { Session } from "next-auth";
 
@@ -24,8 +25,18 @@ export const {
   signOut,
 } = NextAuth({
   adapter: DrizzleAdapter(db, tableCreator),
-  providers: [Discord],
+  providers: [GitHub],
   callbacks: {
+    jwt({ token, profile }) {
+      if (profile) {
+        token.id = profile.id;
+        token.image = profile.avatar_url || profile.picture;
+      }
+      return token;
+    },
+    authorized({ auth }) {
+      return !!auth?.user; // this ensures there is a logged in user for -every- request
+    },
     session: ({ session, user }) => ({
       ...session,
       user: {
@@ -33,5 +44,8 @@ export const {
         id: user.id,
       },
     }),
+  },
+  pages: {
+    signIn: "/sign-in", // overrides the next-auth default signin page https://authjs.dev/guides/basics/pages
   },
 });
