@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import { useLocalStorage } from "@/lib/hooks/use-local-storage";
 import { cn } from "@/lib/utils";
-import { useChat } from "ai/react";
 import type { Message } from "ai/react";
+import { useChat } from "ai/react";
 import { toast } from "react-hot-toast";
 
 import { Button } from "./ui/button";
