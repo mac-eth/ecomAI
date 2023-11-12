@@ -2,6 +2,7 @@ import { nanoid } from "@/lib/utils";
 import { kv } from "@vercel/kv";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { Configuration, OpenAIApi } from "openai-edge";
+import type { ChatCompletionRequestMessage } from "openai-edge/types/types/chat";
 
 import { auth } from "@ecomai/auth";
 
@@ -14,7 +15,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export async function POST(req: Request) {
-  const json = await req.json();
+  const json = (await req.json()) as {
+    id?: string;
+    messages: ChatCompletionRequestMessage[];
+    previewToken?: string;
+  };
   const { messages, previewToken } = json;
   const userId = (await auth())?.user.id;
 
@@ -37,7 +42,7 @@ export async function POST(req: Request) {
 
   const stream = OpenAIStream(res, {
     async onCompletion(completion) {
-      const title = json.messages[0].content.substring(0, 100);
+      const title = json.messages[0]?.content.substring(0, 100);
       const id = json.id ?? nanoid();
       const createdAt = Date.now();
       const path = `/chat/${id}`;
