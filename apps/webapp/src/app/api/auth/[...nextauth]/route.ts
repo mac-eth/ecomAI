@@ -1,2 +1,2 @@
-export { GET, POST } from "@ecomAI/auth";
+export { GET, POST } from "@ecomai/auth";
 export const runtime = "edge";
