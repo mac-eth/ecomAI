@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
-} from '@/components/ui/card'
-import { IconGitHub, IconGoogle } from './ui/icons'
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { LoginButton } from './login-button'
+import { LoginButton } from "./login-button";
+import { IconGitHub, IconGoogle } from "./ui/icons";
 
 export function LoginPanel() {
   return (
@@ -42,7 +42,7 @@ export function LoginPanel() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-muted px-2 text-muted-foreground">
+            <span className="bg-muted text-muted-foreground px-2">
               Or continue with
             </span>
           </div>
@@ -60,5 +60,5 @@ export function LoginPanel() {
         <Button className="w-full">Create account</Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

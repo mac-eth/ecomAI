@@ -16,7 +16,7 @@ import { auth } from "@ecomai/auth";
 export async function Header() {
   const session = await auth();
   return (
-    <header className="from-background/10 via-background/50 to-background/80 sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b px-4 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b from-background/10 via-background/50 to-background/80 px-4 backdrop-blur-xl">
       <div className="flex items-center">
         {session?.user ? (
           <Sidebar>
@@ -34,7 +34,7 @@ export async function Header() {
           </Link>
         )}
         <div className="flex items-center">
-          <IconSeparator className="text-muted-foreground/50 h-6 w-6" />
+          <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
           {session?.user ? (
             <UserMenu user={session.user} />
           ) : (

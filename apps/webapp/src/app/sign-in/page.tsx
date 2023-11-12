@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { LoginButton } from "@/components/login-button";
 import { LoginPanel } from "@/components/login-panel";
 
 import { auth } from "@ecomai/auth";

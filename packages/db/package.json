@@ -22,7 +22,7 @@
     "@ecomai/prettier-config": "workspace:^0.1.0",
     "@ecomai/tsconfig": "workspace:^0.1.0",
     "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.19.13",
+    "drizzle-kit": "^0.20.1",
     "eslint": "^8.53.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
