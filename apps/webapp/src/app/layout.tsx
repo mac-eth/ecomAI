@@ -57,6 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Analytics />
           <TailwindIndicator />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

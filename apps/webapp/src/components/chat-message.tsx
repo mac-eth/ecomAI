@@ -4,7 +4,7 @@
 import { ChatMessageActions } from "@/components/chat-message-actions";
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import { CodeBlock } from "@/components/ui/codeblock";
-import { IconOpenAI, IconRobot, IconUser } from "@/components/ui/icons";
+import { IconRobot, IconUser } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import type { Message } from "ai";
 import remarkGfm from "remark-gfm";
