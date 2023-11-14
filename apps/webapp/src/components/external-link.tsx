@@ -1,15 +1,16 @@
 export function ExternalLink({
   href,
-  children
+  children,
 }: {
-  href: string
-  children: React.ReactNode
+  href: string;
+  children: React.ReactNode;
 }) {
   return (
     <a
       href={href}
       target="_blank"
       className="inline-flex flex-1 justify-center gap-1 leading-4 hover:underline"
+      rel="noreferrer"
     >
       <span>{children}</span>
       <svg
@@ -25,5 +26,5 @@ export function ExternalLink({
         ></path>
       </svg>
     </a>
-  )
+  );
 }

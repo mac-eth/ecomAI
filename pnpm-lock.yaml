@@ -42,7 +42,7 @@ importers:
         specifier: ^1.0.4
         version: 1.0.5(@types/react-dom@18.2.15)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dialog':
-        specifier: ^1.0.4
+        specifier: ^1.0.5
         version: 1.0.5(@types/react-dom@18.2.15)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.0.5
@@ -122,6 +122,9 @@ importers:
       next-themes:
         specifier: ^0.2.1
         version: 0.2.1(next@14.0.2)(react-dom@18.2.0)(react@18.2.0)
+      next.js:
+        specifier: ^1.0.3
+        version: 1.0.3
       openai:
         specifier: ^4.17.5
         version: 4.17.5
@@ -6409,6 +6412,10 @@ packages:
   /next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
+
+  /next.js@1.0.3:
+    resolution: {integrity: sha512-nosnT7Jh4ML3kzwG9MPW+SfBKuHoZEMcCWw5kxwMYXoxnADGzIxWl+TdDMcEZP6Xl/t8m/5uyVlA9SBkH2oh/w==}
+    dev: false
 
   /next@14.0.2(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-jsAU2CkYS40GaQYOiLl9m93RTv2DA/tTJ0NRlmZIBIL87YwQ/xR8k796z7IqgM3jydI8G25dXvyYMC9VDIevIg==}

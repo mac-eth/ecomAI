@@ -1,83 +1,72 @@
-'use client'
+"use client";
 
-import * as React from 'react'
-import { useRouter } from 'next/navigation'
-import { toast } from 'react-hot-toast'
-
-import { type Chat, ServerActionResult } from '@/lib/types'
-import { cn, formatDate } from '@/lib/utils'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle
-} from '@/components/ui/alert-dialog'
-import { Button } from '@/components/ui/button'
+import * as React from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { badgeVariants } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle
-} from '@/components/ui/dialog'
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   IconShare,
   IconSpinner,
   IconTrash,
-  IconUsers
-} from '@/components/ui/icons'
-import Link from 'next/link'
-import { badgeVariants } from '@/components/ui/badge'
+  IconUsers,
+} from "@/components/ui/icons";
 import {
   Tooltip,
   TooltipContent,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import type { Chat, ServerActionResult } from "@/lib/types";
+import { cn, formatDate } from "@/lib/utils";
+import { toast } from "react-hot-toast";
 
 interface SidebarActionsProps {
-  chat: Chat
-  removeChat: (args: { id: string; path: string }) => ServerActionResult<void>
-  shareChat: (chat: Chat) => ServerActionResult<Chat>
+  chat: Chat;
+  removeChat: (args: { id: string; path: string }) => ServerActionResult<void>;
+  shareChat: (chat: Chat) => ServerActionResult<Chat>;
 }
 
 export function SidebarActions({
   chat,
   removeChat,
-  shareChat
+  shareChat,
 }: SidebarActionsProps) {
-  const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
-  const [shareDialogOpen, setShareDialogOpen] = React.useState(false)
-  const [isRemovePending, startRemoveTransition] = React.useTransition()
-  const [isSharePending, startShareTransition] = React.useTransition()
-  const router = useRouter()
+  const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false);
+  const [shareDialogOpen, setShareDialogOpen] = React.useState(false);
+  const [isRemovePending, startRemoveTransition] = React.useTransition();
+  const [isSharePending, startShareTransition] = React.useTransition();
+  const router = useRouter();
 
   const copyShareLink = React.useCallback(async (chat: Chat) => {
     if (!chat.sharePath) {
-      return toast.error('Could not copy share link to clipboard')
+      return toast.error("Could not copy share link to clipboard");
     }
 
-    const url = new URL(window.location.href)
-    url.pathname = chat.sharePath
-    navigator.clipboard.writeText(url.toString())
-    setShareDialogOpen(false)
-    toast.success('Share link copied to clipboard', {
+    const url = new URL(window.location.href);
+    url.pathname = chat.sharePath;
+    await navigator.clipboard.writeText(url.toString());
+    setShareDialogOpen(false);
+    toast.success("Share link copied to clipboard", {
       style: {
-        borderRadius: '10px',
-        background: '#333',
-        color: '#fff',
-        fontSize: '14px'
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+        fontSize: "14px",
       },
       iconTheme: {
-        primary: 'white',
-        secondary: 'black'
-      }
-    })
-  }, [])
+        primary: "white",
+        secondary: "black",
+      },
+    });
+  }, []);
 
   return (
     <>
@@ -129,8 +118,8 @@ export function SidebarActions({
               <Link
                 href={chat.sharePath}
                 className={cn(
-                  badgeVariants({ variant: 'secondary' }),
-                  'mr-auto'
+                  badgeVariants({ variant: "secondary" }),
+                  "mr-auto",
                 )}
                 target="_blank"
               >
@@ -143,20 +132,20 @@ export function SidebarActions({
               onClick={() => {
                 startShareTransition(async () => {
                   if (chat.sharePath) {
-                    await new Promise(resolve => setTimeout(resolve, 500))
-                    copyShareLink(chat)
-                    return
+                    await new Promise((resolve) => setTimeout(resolve, 500));
+                    await copyShareLink(chat);
+                    return;
                   }
 
-                  const result = await shareChat(chat)
+                  const result = await shareChat(chat);
 
-                  if (result && 'error' in result) {
-                    toast.error(result.error)
-                    return
+                  if (result && "error" in result) {
+                    toast.error(result.error as string);
+                    return;
                   }
 
-                  copyShareLink(result)
-                })
+                  await copyShareLink(result);
+                });
               }}
             >
               {isSharePending ? (
@@ -171,47 +160,45 @@ export function SidebarActions({
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
+      <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
               This will permanently delete your chat message and remove your
               data from our servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel disabled={isRemovePending}>
-              Cancel
-            </AlertDialogCancel>
-            <AlertDialogAction
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button disabled={isRemovePending}>Cancel</Button>
+            <Button
               disabled={isRemovePending}
-              onClick={event => {
-                event.preventDefault()
+              onClick={(event) => {
+                event.preventDefault();
                 startRemoveTransition(async () => {
                   const result = await removeChat({
                     id: chat.id,
-                    path: chat.path
-                  })
+                    path: chat.path,
+                  });
 
-                  if (result && 'error' in result) {
-                    toast.error(result.error)
-                    return
+                  if (result && "error" in result) {
+                    toast.error(result.error);
+                    return;
                   }
 
-                  setDeleteDialogOpen(false)
-                  router.refresh()
-                  router.push('/')
-                  toast.success('Chat deleted')
-                })
+                  setDeleteDialogOpen(false);
+                  router.refresh();
+                  router.push("/");
+                  toast.success("Chat deleted");
+                });
               }}
             >
               {isRemovePending && <IconSpinner className="mr-2 animate-spin" />}
               Delete
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
-  )
+  );
 }

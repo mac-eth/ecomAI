@@ -1,10 +1,18 @@
-import { Chat } from "@/components/chat";
-import { nanoid } from "@/lib/utils";
+import { redirect } from "next/navigation";
+
+import { auth } from "@ecomai/auth";
 
 export const runtime = "edge";
 
-export default function IndexPage() {
-  const id = nanoid();
+export default async function Page() {
+  const session = await auth();
+  const user = session?.user;
 
-  return <Chat id={id} />;
+  if (!user) {
+    redirect("/sign-in");
+  } else {
+    redirect("/chat");
+  }
+
+  return <></>;
 }
