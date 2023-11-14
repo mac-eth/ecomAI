@@ -9,7 +9,7 @@ import { auth } from "@ecomai/auth";
 export const runtime = "edge";
 
 const configuration = {
-  organization: process.env.OPENAI_ORG,
+  // organization: process.env.OPENAI_ORG,
   apiKey: process.env.OPENAI_API_KEY,
 };
 
