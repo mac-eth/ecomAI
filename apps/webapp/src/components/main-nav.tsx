@@ -2,14 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { mainNavigation } from "@/config/navigation";
 import { cn } from "@/lib/utils";
-
-const navigation = [
-  { name: "AI Expert", href: "/chat" },
-  { name: "Resources", href: "/resources" },
-  { name: "Tutorials", href: "/tutorials" },
-  { name: "Settings", href: "/settings" },
-];
 
 export function MainNav({
   className,
@@ -23,7 +17,7 @@ export function MainNav({
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
-      {navigation.map((item) => (
+      {mainNavigation.map((item) => (
         <Link
           key={item.name}
           href={item.href}
