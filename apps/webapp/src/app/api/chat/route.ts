@@ -1,29 +1,33 @@
 import { nanoid } from "@/lib/utils";
 import { kv } from "@vercel/kv";
 import { OpenAIStream, StreamingTextResponse } from "ai";
-import { Configuration, OpenAIApi } from "openai-edge";
+import OpenAI from "openai";
 import type { ChatCompletionRequestMessage } from "openai-edge/types/types/chat";
 
 import { auth } from "@ecomai/auth";
 
 export const runtime = "edge";
 
-const configuration = new Configuration({
+const configuration = {
+  organization: process.env.OPENAI_ORG,
   apiKey: process.env.OPENAI_API_KEY,
-});
+};
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI(configuration);
 
 export async function POST(req: Request) {
+  const session = await auth();
+  const user = session?.user;
+  const userFirstName = user?.name?.split(" ")[0];
+
   const json = (await req.json()) as {
     id?: string;
     messages: ChatCompletionRequestMessage[];
     previewToken?: string;
   };
   const { messages, previewToken } = json;
-  const userId = (await auth())?.user.id;
 
-  if (!userId) {
+  if (!user?.id) {
     return new Response("Unauthorized", {
       status: 401,
     });
@@ -33,10 +37,17 @@ export async function POST(req: Request) {
     configuration.apiKey = previewToken;
   }
 
-  const res = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages,
-    temperature: 0.7,
+  const res = await openai.chat.completions.create({
+    model: "gpt-4",
+    messages: [
+      {
+        role: "system",
+        content: `You are an ecommerce business expert coaching users through there questions and problems they have in ecommerce. Answer questions like you're tutoring them, give them blog posts and youtube links. Only refer to them as ${userFirstName}. Be personable, emotional, you are human not a robot.`,
+      },
+      ...messages,
+    ],
+
+    temperature: 0.5,
     stream: true,
   });
 
@@ -49,19 +60,18 @@ export async function POST(req: Request) {
       const payload = {
         id,
         title,
-        userId,
+        userId: user.id,
         createdAt,
         path,
         messages: [
           ...messages,
           {
             content: completion,
-            role: "assistant",
           },
         ],
       };
       await kv.hmset(`chat:${id}`, payload);
-      await kv.zadd(`user:chat:${userId}`, {
+      await kv.zadd(`user:chat:${user.id}`, {
         score: createdAt,
         member: `chat:${id}`,
       });

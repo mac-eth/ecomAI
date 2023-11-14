@@ -13,11 +13,13 @@ import { cn } from "@/lib/utils";
 
 import { auth } from "@ecomai/auth";
 
+import { MainNav } from "./main-nav";
+
 export async function Header() {
   const session = await auth();
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b from-background/10 via-background/50 to-background/80 px-4 backdrop-blur-xl">
-      <div className="flex items-center">
+      <div className="flex w-60 items-center">
         {session?.user ? (
           <Sidebar>
             <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
@@ -44,7 +46,8 @@ export async function Header() {
           )}
         </div>
       </div>
-      <div className="flex items-center justify-end space-x-2">
+      <MainNav className="mx-6 hidden md:flex" />
+      <div className="flex w-60 items-center justify-end space-x-2">
         <a
           href="https://github.com/vercel/nextjs-ai-chatbot/"
           target="_blank"
