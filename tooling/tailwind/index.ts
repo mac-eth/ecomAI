@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 export default {
@@ -15,7 +16,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",

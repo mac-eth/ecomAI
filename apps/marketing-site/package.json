@@ -1,0 +1,33 @@
+{
+  "name": "@ecomai/marketing-site",
+  "type": "module",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^5.0.1",
+    "astro": "^3.3.0",
+    "astro-feather-icons": "^1.0.2",
+    "astro-icon": "^0.8.1",
+    "astro-navbar": "^2.3.0",
+    "astro-seo": "^0.8.0"
+  },
+  "devDependencies": {
+    "@ecomai/eslint-config": "workspace:^0.2.0",
+    "@ecomai/prettier-config": "workspace:^0.1.0",
+    "@ecomai/tailwind-config": "workspace:^0.1.0",
+    "@ecomai/tsconfig": "workspace:^0.1.0",
+    "@fontsource-variable/inter": "^5.0.8",
+    "@tailwindcss/typography": "^0.5.10",
+    "sharp": "^0.32.6"
+  }
+}
