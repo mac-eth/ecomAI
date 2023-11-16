@@ -6,33 +6,34 @@ import { StickyHeader, Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Pages",
-    path: "#",
+    title: "AI Expert",
+    path: "/ai-expert",
+  },
+  {
+    title: "Calculators",
+    path: "/about",
     children: [
-      { title: "Features", path: "/features" },
-      { title: "Integrations", path: "/integrations" },
       {
-        title: "Blog Details",
-        path: "/blog//typography-example",
+        title: "Profitability Calculator",
+        path: "/profitability-calculator",
       },
-      { title: "404 Page", path: "/404" },
+      {
+        title: "Shipping Calculator",
+        path: "/shipping-calculator",
+      },
+      {
+        title: "Tax Calculator",
+        path: "/tax-calculator",
+      },
     ],
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    title: "Resources",
+    path: "/blogs",
   },
   {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
+    title: "Coaching",
+    path: "/coaching",
   },
 ];
 ---

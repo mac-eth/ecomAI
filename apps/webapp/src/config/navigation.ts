@@ -1,6 +1,6 @@
 export const mainNavigation = [
   { name: "AI Expert", href: "/chat" },
+  { name: "Calculators", href: "/calculators" },
   { name: "Resources", href: "/resources" },
-  { name: "Tutorials", href: "/tutorials" },
-  { name: "Settings", href: "/settings" },
+  { name: "Coaching", href: "/coaching" },
 ];
