@@ -1,6 +1,6 @@
 # Astroship Pro
 
-Astroship Pro is a Pro version of Popular Free Astroship Starter Template which was made for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+Astroship Pro is a Pro version of Popular Free Astroship Starter Template which was made for startups, marketing websites, landing pages & resources. Built with Astro & TailwindCSS.
 
 This Pro Template is made by [Web3Templates](https://web3templates.com)
 
@@ -16,12 +16,11 @@ This Pro Template is made by [Web3Templates](https://web3templates.com)
 
 ![astroship-pro-preview](https://github.com/web3templates/astroship-pro/assets/1884712/17ca044c-c8ce-4a0a-8780-f078c2ef0cc4)
 
-
 ## Installation
 
 If you are already have github access, you can click on the "Fork" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
 
-Alternatively, you can clone the project directly from the github repo to your local system. make sure you have github repo access. Send an email to hello@web3templates.com to get github repo access. 
+Alternatively, you can clone the project directly from the github repo to your local system. make sure you have github repo access. Send an email to hello@web3templates.com to get github repo access.
 
 ### 1. Clone the repo
 

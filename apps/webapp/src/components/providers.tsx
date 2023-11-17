@@ -64,7 +64,7 @@ export function Providers({ children, headers, ...props }: ProviderProps) {
             <TooltipProvider>{children}</TooltipProvider>
           </NextThemesProvider>
         </ReactQueryStreamedHydration>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </api.Provider>
   );

@@ -134,7 +134,7 @@ I've left this kind of open for you to decide. Some options are [Clerk](https://
 
 The Clerk.dev team even made an [official template repository](https://github.com/clerkinc/t3-turbo-and-clerk) integrating Clerk.dev with this repo.
 
-During Launch Week 7, Supabase [announced their fork](https://supabase.com/blog/launch-week-7-community-highlights#t3-turbo-x-supabase) of this repo integrating it with their newly announced auth improvements. You can check it out [here](https://github.com/supabase-community/create-t3-turbo).
+During Launch Week 7, Supabase [announced their fork](https://supabase.com/resources/launch-week-7-community-highlights#t3-turbo-x-supabase) of this repo integrating it with their newly announced auth improvements. You can check it out [here](https://github.com/supabase-community/create-t3-turbo).
 
 ### Does this pattern leak backend code to my client applications?
 
@@ -242,4 +242,4 @@ Deploying your Expo application works slightly differently compared to Next.js o
 
 The stack originates from [create-t3-app](https://github.com/t3-oss/create-t3-app).
 
-A [blog post](https://jumr.dev/blog/t3-turbo) where I wrote how to migrate a T3 app into this.
+A [resources post](https://jumr.dev/resources/t3-turbo) where I wrote how to migrate a T3 app into this.

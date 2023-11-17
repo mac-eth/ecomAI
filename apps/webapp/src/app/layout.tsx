@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
           </div>
           <Analytics />
-          <TailwindIndicator />
+          {/* <TailwindIndicator /> */}
         </Providers>
         <Analytics />
       </body>
