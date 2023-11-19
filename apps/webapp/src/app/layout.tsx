@@ -12,8 +12,8 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
-    default: "EcomAI",
-    template: `EcomAI - %s`,
+    default: "Ecommerce Explorer",
+    template: `EcomAI - Where AI Meets Ecommerce`,
   },
   description:
     "An AI-powered chatbot designed to assist you in your E-commerce business.",
