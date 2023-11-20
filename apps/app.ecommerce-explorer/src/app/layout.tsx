@@ -46,7 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           headers={headers()}
           enableSystem
         >
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col overflow-x-hidden">
             <Header />
             <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
           </div>
