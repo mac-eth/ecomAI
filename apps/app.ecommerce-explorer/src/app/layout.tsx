@@ -1,13 +1,14 @@
 import "@/app/globals.css";
 
+import { fontMono, fontSans } from "@/lib/fonts";
+
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Navbar } from "@/components/navbar/navbar";
 import { Providers } from "@/components/providers";
-import { fontMono, fontSans } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
+import { cn } from "@/lib/utils";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: {
@@ -37,12 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Toaster />
-        <Providers
-          attribute="class"
-          defaultTheme="system"
-          headers={headers()}
-          enableSystem
-        >
+        <Providers attribute="class" defaultTheme="light" headers={headers()}>
           <div className="relative flex min-h-screen flex-col overflow-x-hidden scroll-smooth">
             <Navbar />
             <main className="flex flex-1 flex-col bg-muted/10">{children}</main>
