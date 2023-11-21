@@ -269,8 +269,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       zod:
-        specifier: ^3.22.2
-        version: 3.22.2
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@ecomai/eslint-config':
         specifier: workspace:^0.2.0
@@ -304,7 +304,7 @@ importers:
         version: link:../db
       '@t3-oss/env-nextjs':
         specifier: ^0.7.1
-        version: 0.7.1(typescript@5.2.2)(zod@3.22.2)
+        version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
       next:
         specifier: ^14.0.2
         version: 14.0.2(react-dom@18.2.0)(react@18.2.0)
@@ -318,8 +318,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       zod:
-        specifier: ^3.22.2
-        version: 3.22.2
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@ecomai/eslint-config':
         specifier: workspace:^0.2.0
@@ -1703,7 +1703,6 @@ packages:
 
   /@mapbox/node-pre-gyp@1.0.11:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
-    hasBin: true
     dependencies:
       detect-libc: 2.0.2
       https-proxy-agent: 5.0.1
@@ -2704,7 +2703,6 @@ packages:
   /@shuding/opentype.js@1.4.0-beta.0:
     resolution: {integrity: sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA==}
     engines: {node: '>= 8.0.0'}
-    hasBin: true
     dependencies:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
@@ -2714,19 +2712,6 @@ packages:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
     dependencies:
       tslib: 2.5.0
-    dev: false
-
-  /@t3-oss/env-core@0.7.1(typescript@5.2.2)(zod@3.22.2):
-    resolution: {integrity: sha512-3+SQt39OlmSaRLqYVFv8uRm1BpFepM5TIiMytRqO9cjH+wB77o6BIJdeyM5h5U4qLBMEzOJWCY4MBaU/rLwbYw==}
-    peerDependencies:
-      typescript: '>=4.7.2'
-      zod: ^3.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      typescript: 5.2.2
-      zod: 3.22.2
     dev: false
 
   /@t3-oss/env-core@0.7.1(typescript@5.2.2)(zod@3.22.4):
@@ -2740,20 +2725,6 @@ packages:
     dependencies:
       typescript: 5.2.2
       zod: 3.22.4
-    dev: false
-
-  /@t3-oss/env-nextjs@0.7.1(typescript@5.2.2)(zod@3.22.2):
-    resolution: {integrity: sha512-tQDbNLGCOvKGi+JoGuJ/CJInJI7/kLWJqtgGppAKS7ZFLdVOqZYR/uRjxlXOWPnxmUKF8VswOAsq7fXUpNZDhA==}
-    peerDependencies:
-      typescript: '>=4.7.2'
-      zod: ^3.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@t3-oss/env-core': 0.7.1(typescript@5.2.2)(zod@3.22.2)
-      typescript: 5.2.2
-      zod: 3.22.2
     dev: false
 
   /@t3-oss/env-nextjs@0.7.1(typescript@5.2.2)(zod@3.22.4):
@@ -3379,7 +3350,6 @@ packages:
   /@vercel/nft@0.23.1:
     resolution: {integrity: sha512-NE0xSmGWVhgHF1OIoir71XAd0W0C1UE3nzFyhpFiMr3rVhetww7NvM1kc41trBsPG37Bh+dE5FYCTMzM/gBu0w==}
     engines: {node: '>=14'}
-    hasBin: true
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@rollup/pluginutils': 4.2.1
@@ -3797,7 +3767,6 @@ packages:
 
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
-    hasBin: true
     dev: false
 
   /astro-feather-icons@1.0.2:
@@ -3823,7 +3792,6 @@ packages:
   /astro@3.5.4(@types/node@17.0.45)(typescript@5.2.2):
     resolution: {integrity: sha512-tyOd2o9KDz9hDaHmYvnY7BbRxeQ1yDxoOW4AVlxAnmHOK6068k6Bivr/C4Wlc6ON40lZ/qIDG9gfNkiEhMEVow==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
-    hasBin: true
     dependencies:
       '@astrojs/compiler': 2.3.2
       '@astrojs/internal-helpers': 0.2.1
@@ -4344,7 +4312,6 @@ packages:
 
   /color-support@1.1.3:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
-    hasBin: true
     dev: false
 
   /color@4.2.3:
@@ -5146,7 +5113,6 @@ packages:
   /esbuild@0.19.5:
     resolution: {integrity: sha512-bUxalY7b1g8vNhQKdB24QDmHeY4V4tw/s6Ak5z+jJX9laP5MoQseTOMemAr0gxssjNcH0MCViG8ONI2kksvfFQ==}
     engines: {node: '>=12'}
-    hasBin: true
     requiresBuild: true
     optionalDependencies:
       '@esbuild/android-arm': 0.19.5
@@ -6712,7 +6678,6 @@ packages:
   /is-docker@3.0.0:
     resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    hasBin: true
     dev: false
 
   /is-extendable@0.1.1:
@@ -6758,7 +6723,6 @@ packages:
   /is-inside-container@1.0.0:
     resolution: {integrity: sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==}
     engines: {node: '>=14.16'}
-    hasBin: true
     dependencies:
       is-docker: 3.0.0
     dev: false
@@ -6966,7 +6930,6 @@ packages:
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
-    hasBin: true
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1
@@ -7041,7 +7004,6 @@ packages:
 
   /katex@0.16.9:
     resolution: {integrity: sha512-fsSYjWS0EEOwvy81j3vRA8TEAhQhKiqO+FQaKWp0m39qwOzHVBgAUBIXWj1pB+O2W3fIpNa6Y9KSKCVbfPhyAQ==}
-    hasBin: true
     dependencies:
       commander: 8.3.0
     dev: false
@@ -7893,7 +7855,6 @@ packages:
   /mime@3.0.0:
     resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
     engines: {node: '>=10.0.0'}
-    hasBin: true
 
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -7991,7 +7952,6 @@ packages:
   /mkdirp@1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
-    hasBin: true
     dev: false
 
   /mri@1.2.0:
@@ -8028,12 +7988,10 @@ packages:
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
 
   /nanoid@4.0.2:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
-    hasBin: true
     dev: false
 
   /napi-build-utils@1.0.2:
@@ -8045,7 +8003,6 @@ packages:
   /needle@2.9.1:
     resolution: {integrity: sha512-6R9fqJ5Zcmf+uYaFgdIHmLwNldn5HbK8L5ybn7Uz+ylX/rnOsSp1AHcvQSrCaFN+qNM1wpymHqD7mVasEOlHGQ==}
     engines: {node: '>= 4.4.x'}
-    hasBin: true
     dependencies:
       debug: 3.2.7
       iconv-lite: 0.4.24
@@ -8191,7 +8148,6 @@ packages:
 
   /node-gyp-build@4.6.1:
     resolution: {integrity: sha512-24vnklJmyRS8ViBNI8KbtK/r/DmXQMRiOMXTNz2nrTnAYUwjmEEbnnpB/+kt+yWRv73bPsSPRFddrcIbAxSiMQ==}
-    hasBin: true
     dev: false
 
   /node-plop@0.26.3:
@@ -8218,7 +8174,6 @@ packages:
   /nopt@5.0.0:
     resolution: {integrity: sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==}
     engines: {node: '>=6'}
-    hasBin: true
     dependencies:
       abbrev: 1.1.1
     dev: false
@@ -8387,7 +8342,6 @@ packages:
 
   /openai@4.17.5:
     resolution: {integrity: sha512-SDgA933/QOjISCgWRc/JQhY1HweYZ6FOie3bWrCpj09FA5xIlaomldbyzICHNjtkh7SWEmGYFjRHIDtuwr+eTw==}
-    hasBin: true
     dependencies:
       '@types/node': 18.18.9
       '@types/node-fetch': 2.6.9
@@ -8771,7 +8725,6 @@ packages:
   /prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
     engines: {node: '>=10'}
-    hasBin: true
     dependencies:
       detect-libc: 2.0.2
       expand-template: 2.0.3
@@ -9418,7 +9371,6 @@ packages:
   /rollup@3.29.4:
     resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
-    hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
@@ -9643,7 +9595,6 @@ packages:
   /sitemap@7.1.1:
     resolution: {integrity: sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==}
     engines: {node: '>=12.0.0', npm: '>=5.6.0'}
-    hasBin: true
     dependencies:
       '@types/node': 17.0.45
       '@types/sax': 1.2.7
@@ -9750,7 +9701,6 @@ packages:
 
   /stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
-    deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
     dev: false
 
   /stacktracey@2.1.8:
@@ -9992,7 +9942,6 @@ packages:
   /svgo@2.8.0:
     resolution: {integrity: sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==}
     engines: {node: '>=10.13.0'}
-    hasBin: true
     dependencies:
       '@trysound/sax': 0.2.0
       commander: 7.2.0
@@ -10695,7 +10644,6 @@ packages:
   /uvu@0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
     engines: {node: '>=8'}
-    hasBin: true
     dependencies:
       dequal: 2.0.3
       diff: 5.1.0
@@ -11079,10 +11027,6 @@ packages:
       mustache: 4.2.0
       stacktracey: 2.1.8
     dev: true
-
-  /zod@3.22.2:
-    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
-    dev: false
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
