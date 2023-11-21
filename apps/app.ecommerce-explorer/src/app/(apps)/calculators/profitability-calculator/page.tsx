@@ -38,7 +38,6 @@ export default function ProfitabilityCalculatorPage() {
           </div>
         ))}
       </PageHeader>
-
       <ProfitabilityForm />
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -145,27 +145,50 @@ function ProfitabilityDisplaySection({
   profitPerOrder: number;
 }) {
   return (
-    <div className="mx-8 w-full space-y-6 self-center rounded-2xl bg-primary/10 p-12">
-      <div className="space-y-4">
-        <h2 className="text-4xl font-semibold">Your Profitability </h2>
-        <p className="text-4xl font-bold">${totalProfit}</p>
-      </div>
-      <div className="space-y-4">
-        <h2 className="text-4xl font-semibold">Your Profit Margin </h2>
-        <div className="text-4xl font-bold">
-          <p>{profitMargin ? profitMargin?.toFixed(2) : 0}%</p>
-        </div>
-      </div>
-      <div className="space-y-4">
-        <h2 className="text-4xl font-semibold">Your Profit Per Order </h2>
-        <div className="text-4xl font-bold">
-          <p>${profitPerOrder ? profitPerOrder.toFixed(2) : 0}</p>
-        </div>
-      </div>
+    <div className="mx-16 w-full space-y-6">
+      <Card className="bg-primary/10">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardTitle className="text-lg font-medium">
+            Your Profitability
+          </CardTitle>
+          <DollarSign />
+        </CardHeader>
+        <CardContent>
+          <p className="text-3xl font-bold">${totalProfit}</p>
+        </CardContent>
+      </Card>
+      <Card className="bg-primary/10">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardTitle className="text-lg font-medium">
+            Your Profitability
+          </CardTitle>
+          <DollarSign />
+        </CardHeader>
+        <CardContent>
+          <p className="text-3xl font-bold">
+            {profitMargin ? profitMargin?.toFixed(2) : 0}%
+          </p>
+        </CardContent>
+      </Card>
+      <Card className="bg-primary/10">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardTitle className="text-lg font-medium">
+            Profit Per Order
+          </CardTitle>
+          <DollarSign />
+        </CardHeader>
+        <CardContent>
+          <p className="text-3xl font-bold">
+            ${profitPerOrder ? profitPerOrder?.toFixed(2) : 0}
+          </p>
+        </CardContent>
+      </Card>
       <div className="space-y-6">
         <p className="text-lg">
           Ecommerce Explorer teaches you how to increase your profitability by
-          optimizing your pricing, ad spend, and operating expenses.
+          optimizing your pricing, ad spend, and operating expenses. If you want
+          to become more profitable, book a call with us and we&apos;ll show you
+          how.
         </p>
         <Button size="lg" className="text-xl ">
           Book a Call
