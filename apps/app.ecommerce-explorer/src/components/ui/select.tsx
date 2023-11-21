@@ -1,11 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  IconArrowDown,
-  IconCheck,
-  IconChevronUpDown,
-} from "@/components/ui/icons";
+import { IconCheck, IconChevronUpDown } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import * as SelectPrimitive from "@radix-ui/react-select";
 

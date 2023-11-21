@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Header } from "@/components/header";
+import { Navbar } from "@/components/navbar/navbar";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { fontMono, fontSans } from "@/lib/fonts";
@@ -46,8 +47,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           headers={headers()}
           enableSystem
         >
-          <div className="flex min-h-screen flex-col overflow-x-hidden">
-            <Header />
+          <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+            {/* <Header /> */}
+            <Navbar />
             <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
           </div>
           <Analytics />
