@@ -12,13 +12,13 @@ const features = [
 
 export default function ProfitabilityCalculatorPage() {
   return (
-    <section className="mx-48 my-8">
+    <section className="mx-8 my-8 md:mx-16 lg:mx-32 xl:mx-48">
       <PageHeader
         heading="Ecommerce Profitability Calculator"
         subHeading="Calculate your profitability with our calculator and find out how
             much you're earning with your current strategy."
         mainButton={
-          <Button size="lg" className="px-6 py-3 text-xl font-semibold">
+          <Button size="lg" className="px-6 py-8 text-xl font-semibold md:py-6">
             Profitability Calculator
           </Button>
         }

@@ -100,11 +100,11 @@ function FormInputsSection({
   form: UseFormReturn<z.infer<typeof ProfitabilityFormSchema>>;
 }) {
   return (
-    <div className="grid grid-cols-2 gap-x-8 space-y-8">
-      <h2 className="col-span-2 col-start-1 text-6xl font-bold">
+    <div className="mx-auto space-y-8 md:grid md:grid-cols-2 md:gap-x-8">
+      <h2 className="text-xl font-bold md:col-span-2 md:col-start-1 md:text-6xl">
         Profitability Calculator
       </h2>
-      <p className="col-span-2 col-start-1 text-xl">
+      <p className="col-start-1 text-xl md:col-span-2">
         Calculate your profitability on a particular product or service, or
         across your entire business. Its recommended to input values from the
         last 30 days.
@@ -145,8 +145,8 @@ function ProfitabilityDisplaySection({
   profitPerOrder: number;
 }) {
   return (
-    <div className="mx-16 w-full space-y-6">
-      <Card className="bg-primary/10">
+    <div className="my-6 w-full space-y-6 md:mx-16">
+      <Card className="bg-accent">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
             Your Profitability
@@ -157,10 +157,10 @@ function ProfitabilityDisplaySection({
           <p className="text-3xl font-bold">${totalProfit}</p>
         </CardContent>
       </Card>
-      <Card className="bg-primary/10">
+      <Card className="bg-accent">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
-            Your Profitability
+            Your Profit Margin
           </CardTitle>
           <DollarSign />
         </CardHeader>
@@ -170,7 +170,7 @@ function ProfitabilityDisplaySection({
           </p>
         </CardContent>
       </Card>
-      <Card className="bg-primary/10">
+      <Card className="bg-accent">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
             Profit Per Order
@@ -190,7 +190,7 @@ function ProfitabilityDisplaySection({
           to become more profitable, book a call with us and we&apos;ll show you
           how.
         </p>
-        <Button size="lg" className="text-xl ">
+        <Button size="lg" className="w-full text-xl ">
           Book a Call
         </Button>
       </div>
@@ -231,8 +231,8 @@ export function ProfitabilityForm() {
   return (
     <Card>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className=" p-24 ">
-          <div className="grid grid-cols-2">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="m-8 md:m-24 ">
+          <div className="md:grid md:grid-cols-2">
             <FormInputsSection form={form} />
             <ProfitabilityDisplaySection
               totalProfit={totalProfit}

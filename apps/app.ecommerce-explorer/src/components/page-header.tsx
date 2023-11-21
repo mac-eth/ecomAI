@@ -20,10 +20,17 @@ export function PageHeader({
   secondaryButton,
 }: PageHeaderProps) {
   return (
-    <div className={cn("my-24 grid max-w-7xl grid-cols-6 gap-x-12", className)}>
-      <div className="col-span-4 grid space-y-12">
-        <h2 className="text-[100px] font-bold leading-[1]">{heading}</h2>
-        <p className="text-3xl">{subHeading}</p>
+    <div
+      className={cn(
+        " my-8 grid max-w-7xl items-center md:my-12 md:grid-cols-6 md:gap-x-12",
+        className,
+      )}
+    >
+      <div className="mx-auto my-8 space-y-12 text-center md:col-span-4 md:my-0 md:text-left">
+        <h2 className="text-5xl font-bold leading-[1] md:text-[100px]">
+          {heading}
+        </h2>
+        <p className="text-2xl md:text-3xl">{subHeading}</p>
         <div className="flex flex-col gap-4 md:flex-row">
           {mainButton}
           {secondaryButton}
