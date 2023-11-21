@@ -14,7 +14,7 @@ export default function ProfitabilityCalculatorPage() {
   return (
     <section className="mx-48 my-8">
       <PageHeader
-        heading="Profitability Calculator"
+        heading="Ecommerce Profitability Calculator"
         subHeading="Calculate your profitability with our calculator and find out how
             much you're earning with your current strategy."
         mainButton={
