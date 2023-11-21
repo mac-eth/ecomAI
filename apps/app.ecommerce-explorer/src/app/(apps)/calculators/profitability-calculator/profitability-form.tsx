@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Form,
@@ -10,12 +9,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
-import { zodResolver } from "@hookform/resolvers/zod";
 import type { UseFormReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
+import { useToast } from "@/components/ui/use-toast";
 import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const ProfitabilityFormSchema = z.object({
   totalRevenue: z.number().min(0, {
@@ -190,8 +191,23 @@ function ProfitabilityDisplaySection({
           to become more profitable, book a call with us and we&apos;ll show you
           how.
         </p>
-        <Button size="lg" className="w-full text-xl ">
-          Book a Call
+        <Button
+          size="lg"
+          className="group w-full items-center gap-px py-9 text-lg sm:py-6"
+        >
+          <span>Book A Free Profitability Analysis Call</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="mt-px h-4 w-4 transition-transform group-hover:translate-x-1"
+          >
+            <path
+              fillRule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
         </Button>
       </div>
     </div>

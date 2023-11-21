@@ -12,7 +12,7 @@ const features = [
 
 export default function ProfitabilityCalculatorPage() {
   return (
-    <section className="mx-8 my-8 md:mx-16 lg:mx-32 xl:mx-48">
+    <section className="m-12 md:m-16 lg:m-32 lg:mx-48">
       <PageHeader
         heading="Ecommerce Profitability Calculator"
         subHeading="Calculate your profitability with our calculator and find out how
@@ -24,7 +24,7 @@ export default function ProfitabilityCalculatorPage() {
         }
         secondaryButton={
           <Button size="lg" variant="link" className="text-xl underline">
-            Start Ecommerce Explorer For Free
+            Book A Free Profitability Analysis Call
           </Button>
         }
       >

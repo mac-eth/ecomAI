@@ -2,10 +2,8 @@ import "@/app/globals.css";
 
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Header } from "@/components/header";
 import { Navbar } from "@/components/navbar/navbar";
 import { Providers } from "@/components/providers";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,14 +12,12 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: {
     default: "Ecommerce Explorer",
-    template: `EcomAI - Where AI Meets Ecommerce`,
+    template: `Ecommerce Explorer - %s`,
   },
   description:
-    "An AI-powered chatbot designed to assist you in your E-commerce business.",
+    "Ecommerce Explorer is a collection of free tools designed to help you grow your ecommerce business.",
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -47,10 +43,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           headers={headers()}
           enableSystem
         >
-          <div className="relative flex min-h-screen flex-col overflow-x-hidden">
-            {/* <Header /> */}
+          <div className="relative flex min-h-screen flex-col overflow-x-hidden scroll-smooth">
             <Navbar />
-            <main className="flex flex-1 flex-col bg-muted/50">{children}</main>
+            <main className="flex flex-1 flex-col bg-muted/10">{children}</main>
           </div>
           <Analytics />
           {/* <TailwindIndicator /> */}

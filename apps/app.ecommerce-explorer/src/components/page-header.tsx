@@ -22,12 +22,12 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        " my-8 grid max-w-7xl items-center md:my-12 md:grid-cols-6 md:gap-x-12",
+        "my-12 grid max-w-7xl items-center md:my-12 md:grid-cols-6 md:gap-x-12",
         className,
       )}
     >
       <div className="mx-auto my-8 space-y-12 text-center md:col-span-4 md:my-0 md:text-left">
-        <h2 className="text-5xl font-bold leading-[1] md:text-[100px]">
+        <h2 className="text-6xl font-bold leading-[1] md:text-[100px]">
           {heading}
         </h2>
         <p className="text-2xl md:text-3xl">{subHeading}</p>

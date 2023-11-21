@@ -66,27 +66,27 @@ export function Navbar() {
       defaultClass="py-5 border-transparent"
       activeClass="fixed py-2 bg-background/80 border-border background-blur-lg"
     >
-      <div className="container relative z-10 mx-auto flex flex-col items-center justify-between lg:flex-row">
+      <div className="container relative z-10 mx-auto flex flex-row items-center justify-between">
         {/* Navbar Branding */}
         <a
           href="/"
-          className="focus-visible:shadow-outline-red -ml-2 flex items-center rounded-full px-2 text-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+          className="focus-visible:shadow-outline-shadow -ml-2 flex items-center rounded-full px-2 text-xl transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-2xl"
         >
-          <span className="font-bold text-red-500">Ecommerce</span>
-          <span className="text-slate-600">Explorer</span>
-          <span className="ml-1 mt-0.5 rounded-md bg-red-200 px-2 py-1 text-[10px] font-bold uppercase leading-none text-slate-700">
-            AI
-          </span>
+          <span className="font-extrabold text-primary">Ecom</span>
+          <span className="text-text">Explorer</span>
         </a>
 
         {/* Menu Items */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="flex flex-col text-foreground/80 lg:flex-row lg:gap-8">
+          {/* <NavigationMenuList className="flex flex-col text-foreground/80 lg:flex-row lg:gap-8">
             {menuItems.map((item, index) => (
               <div key={item.title}>
                 {!item.children && (
                   <NavigationMenuItem key={index}>
-                    <NavigationMenuLink href={item.path}>
+                    <NavigationMenuLink
+                      href={item.path}
+                      className="underline-offset-2 transition-all hover:underline"
+                    >
                       {item.title}
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -114,22 +114,21 @@ export function Navbar() {
                 )}
               </div>
             ))}
-          </NavigationMenuList>
-          <div className="mt-3 flex items-center gap-4 lg:hidden">
-            <Button variant="link">Log in</Button>
-            <Button>Get Started Free</Button>
-          </div>
+          </NavigationMenuList> */}
         </NavigationMenu>
         <div>
-          <div className="hidden items-center gap-4 lg:flex">
-            <Button
+          <div className="flex items-center gap-4">
+            {/* <Button
               variant="link"
               className="focus-visible:shadow-outline-red rounded-full px-2 py-1 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
             >
               Log in
-            </Button>
-            <Button className="group inline-flex items-center gap-px">
-              <span>Get Started For Free</span>
+            </Button> */}
+            <Button
+              size="lg"
+              className="text-md group inline-flex items-center gap-px"
+            >
+              <span>Book A Free Call</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -176,9 +175,9 @@ function ListItem({
           {...props}
         >
           {icon && <div className="mr-2">{icon}</div>}
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-y-2">
             <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            <p className="line-clamp-2 text-sm leading-snug text-foreground/50">
               {children}
             </p>
           </div>
