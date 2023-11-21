@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { CheckIcon } from "@radix-ui/react-icons";
 
 import { ProfitabilityForm } from "./profitability-form";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Ecom Explorer - Profitability Calculator",
+    template: `%s - Ecom Explorer - Profitability Calculator`,
+  },
+  description:
+    "Uncover your true profit potential with our easy-to-use Ecommerce Profitability Calculator. Discover how to optimize your pricing, manage costs, and maximize your online business earnings.",
+  keywords: ["ecommerce profitability calculator"],
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 const features = [
   "Calculate Profitability",
