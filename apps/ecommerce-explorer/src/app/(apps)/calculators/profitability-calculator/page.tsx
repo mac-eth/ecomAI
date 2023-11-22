@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { CheckIcon } from "@radix-ui/react-icons";
@@ -42,19 +43,32 @@ const features = [
 
 export default function ProfitabilityCalculatorPage() {
   return (
-    <section className="m-12 md:m-16 lg:m-32 lg:mx-48">
+    <section className="m-12 md:m-16 lg:m-32 lg:mx-48 ">
       <PageHeader
         heading="Ecommerce Profitability Calculator"
         subHeading="Calculate your profitability with our calculator and find out how
             much you're earning with your current strategy."
         mainButton={
-          <Button size="lg" className="px-6 py-8 text-xl font-semibold md:py-6">
-            Profitability Calculator
+          <Button
+            size="lg"
+            className="px-6 py-8 text-xl font-semibold md:py-6"
+            asChild
+          >
+            <Link href="#profitability-calculator">
+              Profitability Calculator
+            </Link>
           </Button>
         }
         secondaryButton={
-          <Button size="lg" variant="link" className="text-xl underline">
-            Book A Free Profitability Analysis Call
+          <Button
+            size="lg"
+            variant="link"
+            className="text-xl underline"
+            asChild
+          >
+            <Link href="https://lp.ecomexplorer.com.au/questionnaire-ben">
+              Book A Free Profitability Analysis Call
+            </Link>
           </Button>
         }
       >
