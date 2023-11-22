@@ -56,4 +56,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  :root {
+    background: hsl(var(--muted) / 0.05);
+  }
 }

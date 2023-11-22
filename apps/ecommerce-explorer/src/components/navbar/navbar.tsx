@@ -62,10 +62,10 @@ const menuItems = [
 export function Navbar() {
   return (
     <StickyHeader
-      className="fixed top-0 z-20 w-full border-b bg-card transition-all"
+      className="fixed top-0 z-20 w-full border-b transition-all"
       scrollY={50}
       defaultClass="py-5 border-transparent"
-      activeClass="fixed py-2 bg-background/80 border-border background-blur-lg"
+      activeClass="fixed py-2 bg-background border-border background-blur-lg"
     >
       <div className="container relative z-10 mx-auto flex flex-row items-center justify-between">
         {/* Navbar Branding */}

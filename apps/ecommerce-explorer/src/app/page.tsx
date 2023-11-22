@@ -1,18 +1,11 @@
-import { redirect } from "next/navigation";
-
-import { auth } from "@ecomai/auth";
+import { Hero } from "@/components/sections/hero";
 
 export const runtime = "edge";
 
-export default async function Page() {
-  const session = await auth();
-  const user = session?.user;
-
-  if (!user) {
-    redirect("/sign-in");
-  } else {
-    redirect("/chat");
-  }
-
-  return <></>;
+export default function Page() {
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
