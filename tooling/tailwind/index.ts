@@ -16,8 +16,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-        outfit: ["Outfit"],
+        satoshi: ["Satoshi", ...defaultTheme.fontFamily.sans],
+        thunder: ["thunder"],
       },
       colors: {
         border: "hsl(var(--border))",
