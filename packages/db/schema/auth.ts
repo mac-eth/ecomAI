@@ -19,7 +19,11 @@ export const users = mySqlTable("user", {
     mode: "date",
     fsp: 3,
   }).default(sql`CURRENT_TIMESTAMP(3)`),
+  phone: varchar("phone", { length: 255 }),
   image: varchar("image", { length: 255 }),
+  businessName: varchar("businessName", { length: 255 }),
+  businessDomain: varchar("businessDomain", { length: 255 }),
+  businessRevenue: int("businessRevenue"),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({

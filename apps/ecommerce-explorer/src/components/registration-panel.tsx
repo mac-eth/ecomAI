@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export function RegistrationPanel() {
   return (
-    <Card className="w-full lg:w-[calc(100vw-theme(spacing.16))] lg:max-w-[calc(100vw-theme(spacing.96))]">
+    <Card className="h-full w-full ">
       <CardHeader>
         <CardTitle>Register A Free Account</CardTitle>
         <CardDescription>
