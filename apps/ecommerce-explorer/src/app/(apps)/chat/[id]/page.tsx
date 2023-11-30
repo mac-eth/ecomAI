@@ -1,51 +1,53 @@
-import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
-import { getChat } from "@/app/actions";
-import { Chat } from "@/components/chat";
-import { api } from "@/utils/api";
+// TO DO
 
-import { auth } from "@ecomai/auth";
+// import type { Metadata } from "next";
+// import { notFound, redirect } from "next/navigation";
+// import { getChat } from "@/app/actions";
+// import { Chat } from "@/components/chat";
+// import { api } from "@/utils/api";
 
-export const runtime = "edge";
-export const preferredRegion = "home";
+// import { auth } from "@ecomai/auth";
 
-export interface ChatPageProps {
-  params: {
-    id: string;
-  };
-}
+// export const runtime = "edge";
+// export const preferredRegion = "home";
 
-export async function generateMetadata({
-  params,
-}: ChatPageProps): Promise<Metadata> {
-  const session = await auth();
+// export interface ChatPageProps {
+//   params: {
+//     id: string;
+//   };
+// }
 
-  if (!session?.user) {
-    return {};
-  }
+// export async function generateMetadata({
+//   params,
+// }: ChatPageProps): Promise<Metadata> {
+//   const session = await auth();
 
-  const chat = await getChat(params.id, session.user.id);
-  return {
-    title: chat?.title.toString().slice(0, 50) ?? "Chat",
-  };
-}
+//   if (!session?.user) {
+//     return {};
+//   }
 
-export default async function ChatPage({ params }: ChatPageProps) {
-  const session = await auth();
+//   const chat = await getChat(params.id, session.user.id);
+//   return {
+//     title: chat?.title.toString().slice(0, 50) ?? "Chat",
+//   };
+// }
 
-  if (!session?.user) {
-    redirect(`/sign-in?next=/chat/${params.id}`);
-  }
+// export default async function ChatPage({ params }: ChatPageProps) {
+//   const session = await auth();
 
-  const chat = await getChat(params.id, session.user.id);
+//   if (!session?.user) {
+//     redirect(`/sign-in?next=/chat/${params.id}`);
+//   }
 
-  if (!chat) {
-    notFound();
-  }
+//   const chat = await getChat(params.id, session.user.id);
 
-  if (chat?.userId !== session?.user?.id) {
-    notFound();
-  }
+//   if (!chat) {
+//     notFound();
+//   }
 
-  return <Chat id={chat.id} initialMessages={chat.messages} />;
-}
+//   if (chat?.userId !== session?.user?.id) {
+//     notFound();
+//   }
+
+//   return <Chat id={chat.id} initialMessages={chat.messages} />;
+// }

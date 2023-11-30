@@ -1,82 +1,84 @@
-import { nanoid } from "@/lib/utils";
-import { kv } from "@vercel/kv";
-import { OpenAIStream, StreamingTextResponse } from "ai";
-import OpenAI from "openai";
-import type { ChatCompletionRequestMessage } from "openai-edge/types/types/chat";
+// TO DO
 
-import { auth } from "@ecomai/auth";
+// import { nanoid } from "@/lib/utils";
+// import { kv } from "@vercel/kv";
+// import { OpenAIStream, StreamingTextResponse } from "ai";
+// import OpenAI from "openai";
+// import type { ChatCompletionRequestMessage } from "openai-edge/types/types/chat";
 
-export const runtime = "edge";
+// import { auth } from "@ecomai/auth";
 
-const configuration = {
-  // organization: process.env.OPENAI_ORG,
-  apiKey: process.env.OPENAI_API_KEY,
-};
+// export const runtime = "edge";
 
-const openai = new OpenAI(configuration);
+// const configuration = {
+//   // organization: process.env.OPENAI_ORG,
+//   apiKey: process.env.OPENAI_API_KEY,
+// };
 
-export async function POST(req: Request) {
-  const session = await auth();
-  const user = session?.user;
-  const userFirstName = user?.name?.split(" ")[0];
+// const openai = new OpenAI(configuration);
 
-  const json = (await req.json()) as {
-    id?: string;
-    messages: ChatCompletionRequestMessage[];
-    previewToken?: string;
-  };
-  const { messages, previewToken } = json;
+// export async function POST(req: Request) {
+//   const session = await auth();
+//   const user = session?.user;
+//   const userFirstName = user?.name?.split(" ")[0];
 
-  if (!user?.id) {
-    return new Response("Unauthorized", {
-      status: 401,
-    });
-  }
+//   const json = (await req.json()) as {
+//     id?: string;
+//     messages: ChatCompletionRequestMessage[];
+//     previewToken?: string;
+//   };
+//   const { messages, previewToken } = json;
 
-  if (previewToken) {
-    configuration.apiKey = previewToken;
-  }
+//   if (!user?.id) {
+//     return new Response("Unauthorized", {
+//       status: 401,
+//     });
+//   }
 
-  const res = await openai.chat.completions.create({
-    model: "gpt-4",
-    messages: [
-      {
-        role: "system",
-        content: `You are an ecommerce business expert coaching users through there questions and problems they have in ecommerce. Answer questions like you're tutoring them, give them resources posts and youtube links. Only refer to them as ${userFirstName}. Be personable, emotional, you are human not a robot.`,
-      },
-      ...messages,
-    ],
+//   if (previewToken) {
+//     configuration.apiKey = previewToken;
+//   }
 
-    temperature: 0.5,
-    stream: true,
-  });
+//   const res = await openai.chat.completions.create({
+//     model: "gpt-4",
+//     messages: [
+//       {
+//         role: "system",
+//         content: `You are an ecommerce business expert coaching users through there questions and problems they have in ecommerce. Answer questions like you're tutoring them, give them resources posts and youtube links. Only refer to them as ${userFirstName}. Be personable, emotional, you are human not a robot.`,
+//       },
+//       ...messages,
+//     ],
 
-  const stream = OpenAIStream(res, {
-    async onCompletion(completion) {
-      const title = json.messages[0]?.content.substring(0, 100);
-      const id = json.id ?? nanoid();
-      const createdAt = Date.now();
-      const path = `/chat/${id}`;
-      const payload = {
-        id,
-        title,
-        userId: user.id,
-        createdAt,
-        path,
-        messages: [
-          ...messages,
-          {
-            content: completion,
-          },
-        ],
-      };
-      await kv.hmset(`chat:${id}`, payload);
-      await kv.zadd(`user:chat:${user.id}`, {
-        score: createdAt,
-        member: `chat:${id}`,
-      });
-    },
-  });
+//     temperature: 0.5,
+//     stream: true,
+//   });
 
-  return new StreamingTextResponse(stream);
-}
+//   const stream = OpenAIStream(res, {
+//     async onCompletion(completion) {
+//       const title = json.messages[0]?.content.substring(0, 100);
+//       const id = json.id ?? nanoid();
+//       const createdAt = Date.now();
+//       const path = `/chat/${id}`;
+//       const payload = {
+//         id,
+//         title,
+//         userId: user.id,
+//         createdAt,
+//         path,
+//         messages: [
+//           ...messages,
+//           {
+//             content: completion,
+//           },
+//         ],
+//       };
+//       await kv.hmset(`chat:${id}`, payload);
+//       await kv.zadd(`user:chat:${user.id}`, {
+//         score: createdAt,
+//         member: `chat:${id}`,
+//       });
+//     },
+//   });
+
+//   return new StreamingTextResponse(stream);
+// }

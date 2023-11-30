@@ -1,42 +1,44 @@
-import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
+// TO DO
 
-import { appRouter, createTRPCContext } from "@ecomai/api";
-import { auth } from "@ecomai/auth";
+// import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
-export const runtime = "edge";
+// import { appRouter, createTRPCContext } from "@ecomai/api";
+// import { auth } from "@ecomai/auth";
 
-/**
- * Configure basic CORS headers
- * You should extend this to match your needs
- */
-function setCorsHeaders(res: Response) {
-  res.headers.set("Access-Control-Allow-Origin", "*");
-  res.headers.set("Access-Control-Request-Method", "*");
-  res.headers.set("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
-  res.headers.set("Access-Control-Allow-Headers", "*");
-}
+// export const runtime = "edge";
 
-export function OPTIONS() {
-  const response = new Response(null, {
-    status: 204,
-  });
-  setCorsHeaders(response);
-  return response;
-}
+// /**
+//  * Configure basic CORS headers
+//  * You should extend this to match your needs
+//  */
+// function setCorsHeaders(res: Response) {
+//   res.headers.set("Access-Control-Allow-Origin", "*");
+//   res.headers.set("Access-Control-Request-Method", "*");
+//   res.headers.set("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
+//   res.headers.set("Access-Control-Allow-Headers", "*");
+// }
 
-const handler = auth(async (req) => {
-  const response = await fetchRequestHandler({
-    endpoint: "/api/trpc",
-    router: appRouter,
-    req,
-    createContext: () => createTRPCContext({ auth: req.auth, req }),
-    onError({ error, path }) {
-      console.error(`>>> tRPC Error on '${path}'`, error);
-    },
-  });
+// export function OPTIONS() {
+//   const response = new Response(null, {
+//     status: 204,
+//   });
+//   setCorsHeaders(response);
+//   return response;
+// }
 
-  setCorsHeaders(response);
-  return response;
-});
+// const handler = auth(async (req) => {
+//   const response = await fetchRequestHandler({
+//     endpoint: "/api/trpc",
+//     router: appRouter,
+//     req,
+//     createContext: () => createTRPCContext({ auth: req.auth, req }),
+//     onError({ error, path }) {
+//       console.error(`>>> tRPC Error on '${path}'`, error);
+//     },
+//   });
 
-export { handler as GET, handler as POST };
+//   setCorsHeaders(response);
+//   return response;
+// });
+
+// export { handler as GET, handler as POST };
