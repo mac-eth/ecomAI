@@ -71,7 +71,7 @@ export function Navbar() {
         {/* Navbar Branding */}
         <a
           href="/"
-          className="focus-visible:shadow-outline-shadow -ml-2 flex items-center rounded-full px-2 text-xl transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-2xl"
+          className="focus-visible:shadow-outline-shadow -ml-2 flex items-center rounded-full px-2 font-thunder text-xl uppercase transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-4xl"
         >
           <span className="font-extrabold text-primary">Ecom</span>
           <span className="text-text">Explorer</span>
@@ -79,7 +79,7 @@ export function Navbar() {
 
         {/* Menu Items */}
         <NavigationMenu className="hidden lg:flex">
-          {/* <NavigationMenuList className="flex flex-col text-foreground/80 lg:flex-row lg:gap-8">
+          <NavigationMenuList className="text-text flex flex-col font-satoshi text-xl text-foreground/80 lg:flex-row lg:gap-8">
             {menuItems.map((item, index) => (
               <div key={item.title}>
                 {!item.children && (
@@ -94,7 +94,7 @@ export function Navbar() {
                 )}
                 {item.children && (
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-md text-text">
+                    <NavigationMenuTrigger className="">
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -115,7 +115,7 @@ export function Navbar() {
                 )}
               </div>
             ))}
-          </NavigationMenuList> */}
+          </NavigationMenuList>
         </NavigationMenu>
         <div>
           <div className="flex items-center gap-4">
@@ -127,23 +127,11 @@ export function Navbar() {
             </Button> */}
             <Button
               size="lg"
-              className="text-md group inline-flex items-center gap-px"
+              className="group inline-flex items-center gap-px"
               asChild
             >
-              <Link href="https://lp.ecomexplorer.com.au/questionnaire-ben">
+              <Link href="https://lp.ecomexplorer.com.au/questionnaire-mac">
                 <span>Book A Free Call</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="mt-px h-4 w-4 transition-transform group-hover:translate-x-1"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
               </Link>
             </Button>
           </div>

@@ -196,7 +196,7 @@ function ProfitabilityDisplaySection({
           className="group w-full items-center gap-px py-9 text-lg sm:py-6"
           asChild
         >
-          <Link href="https://lp.ecomexplorer.com.au/questionnaire-ben">
+          <Link href="https://lp.ecomexplorer.com.au/questionnaire-mac">
             <span>Book A Free Profitability Analysis Call</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

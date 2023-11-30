@@ -66,7 +66,7 @@ export default function ProfitabilityCalculatorPage() {
             className="text-xl underline"
             asChild
           >
-            <Link href="https://lp.ecomexplorer.com.au/questionnaire-ben">
+            <Link href="https://lp.ecomexplorer.com.au/questionnaire-mac">
               Book A Free Profitability Analysis Call
             </Link>
           </Button>
