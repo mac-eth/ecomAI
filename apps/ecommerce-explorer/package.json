@@ -18,8 +18,8 @@
     "format:check": "prettier --check \"{app,lib,components}**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.27.2",
     "@ecomai/api": "workspace:^0.1.0",
-    "@ecomai/auth": "workspace:^0.1.0",
     "@ecomai/db": "workspace:^0.1.0",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -48,6 +48,7 @@
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "focus-trap-react": "^10.1.1",
+    "framer-motion": "^10.16.5",
     "nanoid": "^4.0.2",
     "next": "^14.0.2",
     "next-themes": "^0.2.1",

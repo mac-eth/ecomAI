@@ -1,6 +1,5 @@
 // Importing env files here to validate on build
 import "./src/env.mjs";
-import "@ecomai/auth/env.mjs";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -9,7 +8,7 @@ const config = {
     serverActions: true,
   },
   /** Enables hot reloading for local packages without a build step */
-  transpilePackages: ["@ecomai/api", "@ecomai/auth", "@ecomai/db"],
+  transpilePackages: ["@ecomai/api", "@ecomai/db"],
   /** We already do linting and typechecking as separate tasks in CI */
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
