@@ -193,7 +193,7 @@ function ProfitabilityDisplaySection({
         </p>
         <Button
           size="lg"
-          className="group w-full items-center gap-px py-9 text-lg sm:py-6"
+          className="group w-full items-center gap-px py-9 text-lg sm:py-6 lg:text-3xl"
           asChild
         >
           <Link href="https://lp.ecomexplorer.com.au/questionnaire-mac">

@@ -63,7 +63,7 @@ export default function ProfitabilityCalculatorPage() {
           <Button
             size="lg"
             variant="link"
-            className="text-xl underline"
+            className="text-xl underline "
             asChild
           >
             <Link href="https://lp.ecomexplorer.com.au/questionnaire-mac">

@@ -42,7 +42,7 @@ export function SocialProof() {
   return (
     <section className="w-full bg-black">
       <Container className="">
-        <div className="grid h-[70vh] grid-cols-2 gap-8 overflow-hidden md:grid-cols-3">
+        <div className="grid-cols grid h-[70vh] gap-8 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
           <ScrollingCards baseVelocity={20}>
             {socialProofImages1.map((image) => (
               <Image
