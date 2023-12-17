@@ -147,7 +147,7 @@ function ProfitabilityDisplaySection({
 }) {
   return (
     <div className="my-6 w-full space-y-6 md:mx-16">
-      <Card className="bg-accent">
+      <Card className="bg-accent/10">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
             Your Profitability
@@ -158,7 +158,7 @@ function ProfitabilityDisplaySection({
           <p className="text-3xl font-bold">${totalProfit}</p>
         </CardContent>
       </Card>
-      <Card className="bg-accent">
+      <Card className="bg-accent/10">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
             Your Profit Margin
@@ -171,7 +171,7 @@ function ProfitabilityDisplaySection({
           </p>
         </CardContent>
       </Card>
-      <Card className="bg-accent">
+      <Card className="bg-accent/10">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-lg font-medium">
             Profit Per Order
