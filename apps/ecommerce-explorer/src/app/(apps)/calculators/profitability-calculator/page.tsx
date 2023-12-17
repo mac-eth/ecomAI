@@ -51,7 +51,7 @@ export default function ProfitabilityCalculatorPage() {
         mainButton={
           <Button
             size="lg"
-            className="px-6 py-8 text-xl font-semibold md:py-6"
+            className="flex flex-row px-6 py-8 text-xl font-semibold md:py-6 lg:px-12 lg:text-2xl"
             asChild
           >
             <Link href="#profitability-calculator">

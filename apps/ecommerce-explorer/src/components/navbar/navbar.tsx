@@ -94,7 +94,7 @@ export function Navbar() {
                 )}
                 {item.children && (
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="">
+                    <NavigationMenuTrigger className="underline-offset-2 transition-all hover:underline">
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -161,7 +161,7 @@ function ListItem({
         <a
           href={href}
           className={cn(
-            "flex select-none flex-row items-center justify-center space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "flex select-none flex-row items-center justify-center space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 focus:bg-accent/10",
             className,
           )}
           {...props}
