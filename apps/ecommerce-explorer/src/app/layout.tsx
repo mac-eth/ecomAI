@@ -51,9 +51,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Toaster />
         <Providers attribute="class" defaultTheme="light" headers={headers()}>
-          <div className="font-satoshi relative flex min-h-screen flex-col overflow-x-hidden scroll-smooth">
+          <div className="relative flex min-h-screen flex-col overflow-x-hidden scroll-smooth font-satoshi">
             <Navbar />
-            <main className="flex flex-1 flex-col bg-muted/5">{children}</main>
+            <main className="flex flex-1 flex-col">{children}</main>
           </div>
           <Analytics />
           {/* <TailwindIndicator /> */}
