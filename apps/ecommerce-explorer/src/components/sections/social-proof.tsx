@@ -40,7 +40,7 @@ const socialProofImages1 = [
 
 export function SocialProof() {
   return (
-    <section className="w-full bg-black">
+    <section className="w-full overflow-hidden rounded-t-[40px] bg-black">
       <Container className="">
         <div className="grid-cols grid h-[70vh] gap-8 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
           <ScrollingCards baseVelocity={20}>
@@ -49,7 +49,7 @@ export function SocialProof() {
                 src={image.src}
                 alt={image.alt}
                 key={image.alt}
-                className="shadow-shadow rounded-xl shadow-md ring-1 ring-ring"
+                className="shadow-shadow rounded-xl shadow-md ring-1 ring-accent"
               />
             ))}
           </ScrollingCards>
@@ -59,7 +59,7 @@ export function SocialProof() {
                 src={image.src}
                 alt={image.alt}
                 key={image.alt}
-                className="shadow-shadow rounded-xl shadow-md ring-1 ring-ring"
+                className="shadow-shadow rounded-xl shadow-md ring-1 ring-accent"
               />
             ))}
           </ScrollingCardsInverse>
@@ -69,7 +69,7 @@ export function SocialProof() {
                 src={image.src}
                 alt={image.alt}
                 key={image.alt}
-                className="shadow-shadow rounded-xl shadow-md ring-1 ring-ring"
+                className="shadow-shadow rounded-xl shadow-md ring-1 ring-accent"
               />
             ))}
           </ScrollingCards>
