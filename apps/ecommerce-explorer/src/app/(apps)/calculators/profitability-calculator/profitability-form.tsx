@@ -248,7 +248,7 @@ export function ProfitabilityForm() {
   const profitPerOrder = aov ? totalProfit / (totalRevenue / aov) : 0;
 
   return (
-    <Card id="profitability-calculator">
+    <Card id="profitability-calculator" className="bg-foreground/5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="m-8 md:m-24 ">
           <div className="md:grid md:grid-cols-2">

@@ -31,7 +31,7 @@ const menuItems = [
     children: [
       {
         title: "Profitability Calculator",
-        path: "/profitability-calculator",
+        path: "/calculators/profitability-calculator",
         description: "Calculate your profitability with this calculator.",
         icon: <RocketIcon className="mr-4 h-9 w-9 text-foreground/50" />,
       },
